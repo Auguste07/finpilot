@@ -1,3 +1,2 @@
-import { PageHeader } from '@/components/page-header';
-import { Plus } from 'lucide-react';
-export default function Income(){return <><PageHeader eyebrow="Cash-in" title="Entrées" subtitle="Salaires, revenus variables, remboursements et autres sources de trésorerie." actions={<button className="btn btn-primary"><Plus size={16}/>Ajouter une entrée</button>}/><div className="grid-3"><div className="card"><div className="metric-label">Revenus réguliers</div><div className="metric">4 200 $</div><div className="delta">Mensuel</div></div><div className="card"><div className="metric-label">Revenus variables</div><div className="metric">1 200 $</div><div className="delta">Ce mois</div></div><div className="card"><div className="metric-label">Prévision prochaine période</div><div className="metric">5 600 $</div><div className="delta">Confiance 91%</div></div></div></>}
+import { IncomeManager } from '@/components/income-manager';
+export default function Income(){return <IncomeManager/>}

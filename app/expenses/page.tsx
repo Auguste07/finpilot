@@ -1,5 +1,2 @@
-import { PageHeader } from '@/components/page-header';
-import { transactions } from '@/lib/demo-data';
-import { Plus, Filter } from 'lucide-react';
-const money=(n:number)=>new Intl.NumberFormat('fr-FR',{style:'currency',currency:'USD'}).format(n);
-export default function Expenses(){return <><PageHeader eyebrow="Transactions" title="Dépenses réelles" subtitle="Ajoutez, modifiez et rapprochez vos dépenses avec les éléments planifiés." actions={<><button className="btn"><Filter size={16}/>Filtrer</button><button className="btn btn-primary"><Plus size={16}/>Ajouter</button></>}/><div className="card"><div className="table-wrap"><table><thead><tr><th>Date</th><th>Dépense</th><th>Catégorie</th><th>Type</th><th>Statut</th><th>Montant</th></tr></thead><tbody>{transactions.filter(t=>t.amount<0).map(t=><tr key={t.label}><td>{t.date}</td><td><strong>{t.label}</strong></td><td>{t.category}</td><td>{t.type}</td><td><span className="pill green">{t.status}</span></td><td className="amount negative">-{money(Math.abs(t.amount))}</td></tr>)}</tbody></table></div></div></>}
+import { ExpenseManager } from '@/components/expense-manager';
+export default function Expenses(){ return <ExpenseManager/>; }

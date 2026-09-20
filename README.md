@@ -90,3 +90,20 @@ Dans Supabase Auth > URL Configuration :
 - Une `allocation` réserve virtuellement une portion des ressources mais n'est pas une dépense comptable.
 - Un projet sépare `target_amount`, `allocated_amount` et les transactions réellement dépensées.
 - Les prévisions combinent solde réel + revenus attendus - dépenses planifiées - réserves/allocation selon le scénario.
+
+## V3 — Calendrier, dettes/créances et interactions
+
+- Calendrier financier mensuel cliquable : dépenses planifiées, dettes et créances.
+- Prévision : sélection du mois par calendrier natif (`input type=month`).
+- Dettes à payer = passif prévisionnel négatif jusqu'au règlement.
+- Créances à recevoir = revenu prévisionnel positif jusqu'à l'encaissement.
+- Entrées enrichies : salaire, bonus, remboursement, créance encaissée, freelance, vente.
+- CRUD local fonctionnel pour entrées, dettes/créances, projets, budgets, dépenses planifiées et transactions.
+- Recherche de navigation fonctionnelle dans la barre supérieure.
+- Validation d'import Excel persistée localement avec notification.
+- Paramètres et règles automatiques activables/désactivables et persistés localement.
+- Schéma Supabase étendu par `004_obligations_calendar.sql`.
+
+### Note de persistance
+
+Tant que l'authentification est volontairement ouverte, les écrans interactifs utilisent `localStorage` pour rester fonctionnels sans compte. Les tables Supabase sont déjà prêtes pour un futur retour à une authentification multi-utilisateur avec RLS.

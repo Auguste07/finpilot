@@ -18,7 +18,7 @@ export default function Dashboard(){
 
     <div className="section dashboard-grid-main">
       <div className="card chart-card">
-        <div className="section-head"><div><div className="section-title">Cashflow & projection</div><div className="section-caption">Entrées, dépenses et trajectoire prévisionnelle</div></div><div className="segmented"><button>1M</button><button>3M</button><button className="active">6M</button><button>1A</button></div></div>
+        <div className="section-head"><div><div className="section-title">Cashflow & projection</div><div className="section-caption">Entrées, dépenses et trajectoire prévisionnelle</div></div><div className="segmented"><Link href="/forecast?range=1m">1M</Link><Link href="/forecast?range=3m">3M</Link><Link className="active" href="/forecast?range=6m">6M</Link><Link href="/forecast?range=1y">1A</Link></div></div>
         <svg viewBox="0 0 760 280" className="cashflow-svg" role="img" aria-label="Projection de trésorerie sur six mois">
           <defs><linearGradient id="areaGreen" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stopColor="var(--chart-green)" stopOpacity=".22"/><stop offset="1" stopColor="var(--chart-green)" stopOpacity="0"/></linearGradient></defs>
           {[45,100,155,210].map((y)=><line key={y} x1="38" y1={y} x2="736" y2={y} className="gridline"/>)}
