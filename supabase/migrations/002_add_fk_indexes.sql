@@ -1,0 +1,17 @@
+create index if not exists allocations_user_id_idx on public.allocations(user_id);
+create index if not exists categories_parent_id_idx on public.categories(parent_id);
+create index if not exists import_batches_user_id_idx on public.import_batches(user_id);
+create index if not exists planned_expenses_account_id_idx on public.planned_expenses(account_id);
+create index if not exists planned_expenses_category_id_idx on public.planned_expenses(category_id);
+create index if not exists planned_expenses_converted_transaction_id_idx on public.planned_expenses(converted_transaction_id);
+create index if not exists planned_expenses_project_id_idx on public.planned_expenses(project_id);
+create index if not exists planned_expenses_recurring_rule_id_idx on public.planned_expenses(recurring_rule_id);
+create index if not exists projects_user_id_idx on public.projects(user_id);
+create index if not exists recurring_rules_account_id_idx on public.recurring_rules(account_id);
+create index if not exists recurring_rules_category_id_idx on public.recurring_rules(category_id);
+create index if not exists recurring_rules_project_id_idx on public.recurring_rules(project_id);
+create index if not exists recurring_rules_user_id_idx on public.recurring_rules(user_id);
+create index if not exists transactions_account_id_idx on public.transactions(account_id);
+create index if not exists transactions_category_id_idx on public.transactions(category_id);
+create index if not exists transactions_project_id_idx on public.transactions(project_id);
+create index if not exists transactions_recurring_rule_id_idx on public.transactions(recurring_rule_id);
